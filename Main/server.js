@@ -11,7 +11,7 @@ const pool = new Pool({
     user: "postgres",
     host: "localhost",
     database: "tracker_db",
-    password: "password",
+    password: "Password",
     port: 5432,
 });
 
