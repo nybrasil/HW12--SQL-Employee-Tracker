@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS tracker_db;
 CREATE DATABASE tracker_db;
 
-\c movies_db;
+\c tracker_db;
 
 -- Drop tables if they exist 
 DROP TABLE IF EXISTS employees;

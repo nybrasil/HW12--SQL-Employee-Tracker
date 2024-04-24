@@ -61,24 +61,21 @@ const startApp = async () => {
 const viewDepartments = async () => {
   const departments = await pool.query('SELECT * FROM departments');
   console.table(departments.rows);
-  pool.end();
-  startApp()
+  startApp();
 };
 
 // Function to view all roles
 const viewRoles = async () => {
   const roles = await pool.query('SELECT * FROM roles');
   console.table(roles.rows);
-  pool.end();
-  startApp()
+  startApp();
 };
 
 // Function to view all employees
 const viewEmployees = async () => {
   const employees = await pool.query('SELECT * FROM employees');
   console.table(employees.rows);
-  pool.end();
-  startApp()
+  startApp();
 };
 
 // Function to add a department
@@ -91,8 +88,7 @@ const addDepartment = async () => {
 
   await pool.query('INSERT INTO departments (name) VALUES ($1)', [name]);
   console.log('Department added successfully.');
-  pool.end();
-  startApp()
+  startApp();
 };
 
 // Function to add a role
@@ -128,7 +124,7 @@ const addRole = async () => {
     roleDetails.department_id,
   ]);
   console.log('Role added successfully.');
-  pool.end();
+  startApp()
 };
 
 // Function to add an employee
@@ -178,7 +174,7 @@ const addEmployee = async () => {
    ]);
 
    console.log('Employee added successfully.');
-   pool.end();
+   
 };
 
 // Function to update an employee role
@@ -213,7 +209,7 @@ const updateEmployeeRole = async () => {
    await pool.query('UPDATE employees SET role_id = $1 WHERE id = $2', [role_id, employee_id]);
 
    console.log('Employee role updated successfully.');
-   pool.end();
+   
 };
 
 // Call the startApp function to begin the application
